@@ -1,0 +1,116 @@
+<!-- <?php 
+
+$host="localhost";
+$user="root";
+$password="";
+$db="login";
+
+mysqli_connect($host,$user,$password);
+//mysqli_select_db($db);
+
+if(isset($_POST['username'])){
+    
+    $uname=$_POST['email'];
+    $password=$_POST['password'];
+    
+    $sql="select * from info where Username='".$uname."'AND Password='".$password."' limit 1";
+    
+    $result=mysqli_query($con,$sql);
+    
+    if(mysqli_num_rows($result)==1){
+        echo " You Have Successfully Logged in";
+        exit();
+    }
+    else{
+        echo " You Have Entered Incorrect Password";
+        exit();
+    }
+        
+}
+?> -->
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Rural Asset Mapping</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="signin.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="signin.css" rel="stylesheet">
+</head>
+
+<body class="text-center p-0" style="background-image: url('vpic6.png');background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;">
+  <div id="slideshowbg" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; ">
+    <div class="card mb-4 mx-auto rounded-3 shadow-sm" style="min-width: 30%; background-image: url('vpic1.png') ;background-repeat: no-repeat;background-attachment: fixed;background-size: 100% 100%;">
+      <div class="card-header py-3">
+        <h4 class="my-0 fw-normal">Please Login</h4>
+      </div>
+      <div class="card-body">
+        <main class="form-signin">
+          <form method="POST" action = "index.php">
+            <!-- <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+
+            <div class="form-floating my-2" style="border-radius: 5px;">
+              <!-- <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"> -->
+              <!-- <label for="floatingInput">Email address</label> -->
+              <select class="form-control" id="floatingInput" required style="border-radius: 5px;">
+                <option>Select Field...</option>
+                <option> BDPo </option>
+                <option> DDPO </option>
+                <option> ADC </option>
+              </select>
+            </div>
+            <div class="form-floating my-2" style="border-radius: 5px;">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                style="border-radius: 5px;">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating my-2">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                style="border-radius: 5px;">
+              <label for="floatingPassword">Password</label>
+            </div>
+
+            <!-- <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div> -->
+            <button type="button" class="w-100 btn btn-lg btn-primary" type="submit">Log In</button>
+          </form>
+        </main>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
